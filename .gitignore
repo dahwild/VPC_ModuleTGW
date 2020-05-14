@@ -1,0 +1,6 @@
+*.tfstate
+.terraform
+mykey
+mykey.pub
+tf.out
+*.backup
