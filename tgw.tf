@@ -13,19 +13,9 @@ module "tgw" {
   vpc_attachments = {
     vpc = {
       vpc_id      = aws_vpc.main.id
-      subnet_ids  = ["subnet-05fca1d26b9692ce8"]
+      subnet_ids  = ["subnet-09747ce97d63bd0df"] # My private subnet id
       dns_support = true
-      #      ipv6_support = true
 
-      #     tgw_routes = [
-      #        {
-      #          destination_cidr_block = "30.0.0.0/16"
-      #        },
-      #        {
-      #          blackhole = true
-      #          destination_cidr_block = "40.0.0.0/20"
-      #        }
-      #      ]
     }
   }
 
@@ -36,3 +26,13 @@ module "tgw" {
     Purpose = "tgw-complete-example"
   }
 }
+
+##############UNCOMMENT FOR ADMINISTRATOR ACCOUNT######################
+#######################################################################
+############ATTACH TGW CLIENT WITH ADMINISTRATOR ACCOUNT###############
+#######################################################################
+#resource "aws_ec2_transit_gateway_vpc_attachment" "example" {
+#  subnet_ids         = ["subnet-0d09da00535768fa6"] #Admin Subnet Privada 
+#  transit_gateway_id = "tgw-000fc9008dff96791" #Poner transitGW cliente
+#  vpc_id             = aws_vpc.main.id
+#}

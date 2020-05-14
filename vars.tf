@@ -10,6 +10,25 @@ variable "PATH_TO_PUBLIC_KEY" {
   default = "mykey.pub"
 }
 
+variable "vpc_cidr" {
+  default = "10.30.0.0/16"
+}
+
+variable "public_subnet_cidr" {
+  default = "10.30.1.0/24"
+}
+
+variable "private_subnet_cidr" {
+  default = "10.30.2.0/24"
+}
+
+variable "cidr_administrator_account" {
+  default = "10.40.0.0/16"
+}
+
+
+
+
 variable "AMIS" {
   type = map(string)
   default = {
